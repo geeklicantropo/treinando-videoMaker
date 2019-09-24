@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/geeklicantropo/treinando-videoMaker/issues"
   },
-  "homepage": "https://github.com/geeklicantropo/treinando-videoMaker#readme"
+  "homepage": "https://github.com/geeklicantropo/treinando-videoMaker#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
