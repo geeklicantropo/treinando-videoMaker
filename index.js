@@ -5,10 +5,14 @@ const robots = {
 
 async function start()
 {
-    const content = {}
+    const content = 
+    {
+        maximumSentences: 7
+    }
     
     content.searchTerm = askAndReturnSearchTerm()
     content.prefix = askAndReturnPrefix()
+    content.lang = askAndReturnLanguage()
     
     await robots.text(content)
     
@@ -24,7 +28,19 @@ async function start()
         const selectedPrefixText = prefixes[selectedPrefixIndex]
         
         return selectedPrefixText
-    }        
+    }  
+    
+    console.log(JSON.stringify(content, null, 4))
+    
+    function askAndReturnLanguage()
+    {
+        const language = ['pt', 'en', 'fr', 'es', 'ja', 'it']
+        const selectedLangIndex = readline.keyInSelect(language, 'Choice Language: ')
+        const selectedLangText = language[selectedLangIndex]
+        
+        return selectedLangText
+    }
+    
     console.log(content)
 }
 start()
